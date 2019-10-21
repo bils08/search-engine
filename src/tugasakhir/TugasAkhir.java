@@ -43,7 +43,7 @@ public class TugasAkhir {
                 String word = input.next();
                 word = word.toLowerCase();
                 
-                while (word.matches(".*[.,?!()|:;].*")) //[]
+                while (word.matches(".*[.,?!()|:;\\-].*")) //[]
                 {
                     if (word.contains("."))
                     {
