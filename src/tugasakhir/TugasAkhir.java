@@ -27,8 +27,18 @@ public class TugasAkhir {
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
 //        Billy
-        String path = "D:\\Kuliah\\PTKI\\Data_Tugas_Akhir\\";
+
+    String path = "D:\\Kuliah\\PTKI\\Data_Tugas_Akhir\\";
         
+//        Winnie
+ //       String path = "F:/kuliah/Sem 7/PTKI/Data_Tugas_Akhir/";
+        
+//        Reggie
+//        String path = "C:\\Users\\reggi\\Documents\\INFORMATIKA 16 UNPAR\\Semester7\\PTKI\\Tugas Akhir\\search-engine\\dataset\\";
+        
+//        add arrayList stop word
+        
+
 //        Winnie
 //       String path = "F:/kuliah/Sem 7/PTKI/Data_Tugas_Akhir/";
         
@@ -39,9 +49,6 @@ public class TugasAkhir {
         Map<String, ArrayList> invertedIndex = new TreeMap<String, ArrayList> ();
         int jumlahWord = 0;
         ArrayList<String> stopWord = addStopWord();
-        
-        char[] w = new char[501];
-        Tugas t = new Tugas();
         
         for (int i = 0; i < files.length; i++) {
             
@@ -58,7 +65,11 @@ public class TugasAkhir {
             while (input.hasNext()) 
             {
                 String word = input.next();
-                word = word.toLowerCase(); //case folding
+               
+//                case folding
+                word = word.toLowerCase(); 
+                
+//                normalization
                 word = word.replaceAll("[\\p{Punct}&&[^-]]+", "");
                 
                 count = count + 1;
@@ -72,7 +83,7 @@ public class TugasAkhir {
                 if (!stopWord.contains(word))
                 {
                     if (word.length() > 0)
-                    { 
+                    {
                         ArrayList<String> valueWord = invertedIndex.get(word);
                         if (valueWord != null)
                         {
@@ -172,6 +183,7 @@ public class TugasAkhir {
         
         ArrayList<String> stopWord = new ArrayList<String>(Arrays.asList(sw));
         return stopWord;
+
     }   
 }
 

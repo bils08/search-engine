@@ -1,2 +1,0 @@
-tugasakhir.Tugas
-tugasakhir.TugasAkhir
