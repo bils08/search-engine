@@ -30,6 +30,9 @@ public class TugasAkhir {
 //        Winnie
         String path = "F:/kuliah/Sem 7/PTKI/Data_Tugas_Akhir/";
         
+//        Reggie
+//        String path = "C:\\Users\\reggi\\Documents\\INFORMATIKA 16 UNPAR\\Semester7\\PTKI\\Tugas Akhir\\search-engine\\dataset\\";
+        
 //        add arrayList stop word
         
         
@@ -53,68 +56,19 @@ public class TugasAkhir {
             while (input.hasNext()) 
             {
                 String word = input.next();
-                word = word.toLowerCase(); //case folding
+                
+//                case folding
+                word = word.toLowerCase(); 
+                
+//                normalization
                 word = word.replaceAll("[\\p{Punct}&&[^-]]+", "");
                 
-                while (word.matches(".*[.,?!()|:;\\-].*")) //[]
-                {
-                    if (word.contains("."))
-                    {
-                        int tandaBaca = word.indexOf(".");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains(","))
-                    {
-    //                    int tandaBaca = word.indexOf(",");
-                        word = word.replace(",", "");
-                    }
-                    else if (word.contains(":"))
-                    {
-                        int tandaBaca = word.indexOf(":");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains(";"))
-                    {
-                        int tandaBaca = word.indexOf(";");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains("!"))
-                    {
-                        int tandaBaca = word.indexOf("!");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains("?"))
-                    {
-                        int tandaBaca = word.indexOf("?");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains("\""))
-                    {
-                        int tandaBaca = word.indexOf("\"");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains("("))
-                    {
-    //                    int tandaBaca = word.indexOf("(");
-                        word = word.replace("(", "");
-                    }
-                    else if (word.contains(")"))
-                    {
-                        int tandaBaca = word.indexOf(")");
-                        word = word.substring(0, tandaBaca);
-                    }
-                    else if (word.contains("|"))
-                    {
-                        word = word.replace("|", "");
-                    }
-                }
                 count = count + 1;
                 
 //                System.out.println(word);
                 
 //                get dari map apakah word sudah ada atau belum
 //                jika sudah ada, maka tambahkan, jika tidak, maka buat map baru
-
                 if (!stopWord.contains(word))
                 {
                     if (word.length() > 0)
